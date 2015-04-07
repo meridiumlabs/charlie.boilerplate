@@ -1,0 +1,86 @@
+﻿
+/* #Framework 
+================================================== */
+$base-font-size:16px;
+$site-width: 61.25em;
+
+$sprite-width: 300px;
+$sprite-height: 800px;
+
+$break-medium: 940px;
+$break-narrow: 719px;
+
+//Theme specific vars
+$path-images:"/static/images/default" !default;
+
+$logotype-width: 217px !default;
+
+$theme-main-color: #45a0cf !default;
+
+$default-font-color:#1b1b1b !default;
+$default-font-color-inverted:#eee !default;
+$default-font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$default-alternative-font: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$default-heading-font: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+$default-meta-color:#878787 !default;
+
+$default-font-color-listing:#1c1c1c !default;
+
+$default-anchor-color: #45a0cf !default;
+$default-anchor-color-inverted: #fff !default;
+$default-border-color: #e2e2e2 !default;
+
+$background-inverted:#111 !default;
+$background-footer:#111 !default;
+
+$navigation-gradient-start:#333 !default;
+$navigation-gradient-end:#020200 !default;
+$navigation-anchor-color:#fff !default;
+$navigation-divider-color-light:rgba(255,255,255,0.1) !default;
+$navigation-divider-color-dark:rgba(0,0,0,0.4) !default;
+$navigation-selected-color:#a2d8f4 !default;
+
+$background-teaser:#fff !default;
+$background-carousel-body: #333 !default;
+
+$action-color: #45a0cf !default;
+$action-color-hover: #3e97c5 !default;
+$action-color-focus: #3e97c5 !default;
+$action-color-border: #2f86b2 !default;
+$action-color-text: #fff !default;
+
+$target-heading-color:#fff !default;
+$target-anchor-color:#45a0cf !default;
+$target-background:#1c1c1c !default;
+$target-text-color:#ccc !default;
+$target-border-color:rgba(255,255,255,0.2) !default;
+
+$status-info-color: #f2f2f2;
+$status-info-border-color: #e3e3e3;
+$status-warning-color: #fffddb;
+$status-warning-border-color: #eee2b0;
+$status-error-color: #f46f6f;
+$status-error-border-color: #f46f6f;
+
+/* #Icons 
+================================================== */
+
+$font-path: "/content/fonts" !default;
+
+
+/* #Web fonts
+================================================== */	
+
+// Use our http://www.fonts.com/ account or create a client specific account at https://typekit.com/ 
+
+
+
+/* #Icons
+================================================== */
+
+// FontAwesome is included by default. Remove if you find it redundant.
+// You can use fontello.com to select or add your own custom icons. 
+
+// TIP: Install the .OTF font and use the http://fortawesome.github.io/Font-Awesome/cheatsheet/ and copy paste icons to photoshop. :-)
+

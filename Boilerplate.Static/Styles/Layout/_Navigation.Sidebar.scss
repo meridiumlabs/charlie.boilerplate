@@ -1,0 +1,196 @@
+﻿
+/* Narrow screen (smart phones etc) */
+@media only screen and (max-width: $break-narrow) {  
+	
+	html.nav--sidebar {
+
+		// ## Sidebar navigation.
+
+		//Contains the site structure without the navigation. Slides left when #nav i expanded.
+		#structure {
+			background:#fff;
+			position:relative;
+			z-index:1; 
+			-webkit-transform:translate3d(0, 0, 0);
+			-webkit-transition:-webkit-transform 300ms ease;
+			transform:translate3d(0, 0, 0);
+			transition:transform 300ms ease;
+			-webkit-backface-visibility: hidden; //Smoothen the animation.
+
+		} 
+
+
+
+		&.structure-fixed {
+					//overflow-x:hidden;
+				//width:100%;
+				body {
+		
+	
+			}
+			#structure {
+				//overflow:hidden;
+				position:fixed;
+					width:100%;
+
+			}
+			#structure .wrap {
+				//width:100%;
+			}
+		}
+
+		//Placed over #structure to fade out the content.
+		.overlay { 
+			background-color:#000;
+			-webkit-transition:opacity 400ms ease; 
+			opacity:0;
+		}
+		&.nav-expanded {
+			.overlay {
+				opacity:.5;
+			}
+		}
+		&.structure-fixed {
+			.overlay {
+				position:fixed;
+				top:0;
+				left:0;
+				bottom:0;
+				right:0;
+				z-index:1000;	
+				display:block;
+				overflow:hidden;
+			}
+		}
+
+		//Sidebar
+		#nav {
+			background:#111;
+			width:260px;
+			position:absolute;
+			left:0;
+			top:0;
+			height:100%;
+			z-index:0;
+			display:block;
+		}
+
+		//Sidebar navigation expanded
+		&.structure-fixed {
+			#nav {
+			
+			}
+		}
+		&.nav-expanded {
+			body { background:#111; }
+
+			#structure {
+				-webkit-transform:translate3d(260px, 0, 0);
+				transform:translate3d(260px, 0, 0);
+			}
+			#nav .wrap {
+				opacity:1;
+				-webkit-transform: scale(1); 
+			}
+			#nav { 
+			
+				//overflow-y:auto;
+				//-webkit-overflow-scrolling: touch;
+			}
+		}
+
+		// ## Sidebar content
+
+		#nav .wrap {
+			width:auto;
+			min-width:0;
+			padding:0;
+			opacity:0;
+			-webkit-transform: scale(.8);
+			-webkit-transition:all 250ms ease;
+		
+			padding:em(60px) em(20px) 0;
+
+		}
+
+
+		#nav-main {
+			position:static;
+			> li {
+				float:none;
+				padding:0;
+				margin:.5em 0;
+			}
+			> li > a {
+				@include font-size(14px);
+				color:$navigation-anchor-color;
+				font-weight:600;
+				display:block;
+				text-transform:none;
+				line-height:normal;
+				padding:0;
+				white-space:normal;
+				border-right:none;
+				border-left:none;
+			}
+			> li:last-child {
+				position:static;
+				right:auto;
+			}
+			.nav-main-selected > a,
+			.nav-sub-expanded > a {
+				color:$default-anchor-color;
+			}
+		}
+
+
+
+		//Sub navigation
+
+		#nav-sub {
+			position:static;
+			left:auto;
+			top:auto;
+			width:auto;
+			margin-top:.5em !important;
+			a,
+			.nav-sub-selected {
+			
+				font-weight:600;
+				border-bottom:none;
+				display:block;
+				padding:0;
+			}
+			a:focus {
+
+				span {
+
+				}
+			}
+			li {
+				padding-left:1em;
+			}
+
+			a {
+				font-weight:500;
+				margin:1em 0;
+				font-size:em(12px);
+				color:$navigation-anchor-color;
+			}
+			.nav-sub-selected {
+				color:$default-anchor-color;
+			}
+			.nav-sub-expanded {
+	
+			}
+		}
+
+		#nav-tools {
+			display:none;
+		}
+		#nav-tools {
+			position:static; 
+		}
+
+	}
+} 

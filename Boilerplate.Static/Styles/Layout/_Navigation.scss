@@ -1,0 +1,227 @@
+﻿// # Navigation
+// ==================================================
+
+#breadcrumbs {
+	display:none; 
+}
+
+// # Navigation
+
+#nav a[href^="http"]:after {
+    content:none;
+}
+
+.nav {
+	z-index:300;
+	background: $navigation-gradient-start;
+	background: linear-gradient(to bottom, $navigation-gradient-start 10%,$navigation-gradient-end 100%);
+	position:absolute;
+	top:145px;
+	left:0; 
+	right:0;
+	ul {
+		list-style:none;
+		@include normalize-font;
+	}
+}
+
+// ## Main navigation
+.nav-global {
+	@include clearfix;
+	padding:0;
+	margin:0;
+	width:auto;
+}
+.nav-global > li {
+	float:left;
+	padding:1em 0;
+	margin:0;
+	line-height:normal;
+}
+.nav-emphasized {
+	float:right;
+	background:rgba(150,150,150,.2);
+	> .nav-anchor {
+		border-left:0;
+		padding-left:0;
+		box-shadow:none;
+		padding:0 1em;
+	}
+}
+.nav-global	> li.nav-emphasized {
+	float:right;
+	height: 29px;
+}
+
+.nav-anchor,
+.nav-tools-anchor {
+	display:block;
+}
+.nav-anchor--global {
+	@include font-size(16px);
+	color:$navigation-anchor-color;
+	font-weight:600;
+	text-transform:uppercase;
+	line-height:1.65em;
+	padding:0 2em 2px 2em;
+	white-space:nowrap;
+	box-shadow:-1px 0px 0 $navigation-divider-color-dark;
+	border-left:1px solid $navigation-divider-color-light;
+}
+.nav-selected .nav-anchor--global {
+	color:$navigation-selected-color;
+}
+.nav-anchor--global--expanded {
+	color:$navigation-selected-color;
+}
+.nav-selected > .nav-anchor--local {
+	font-weight:700;
+	color:#767676;
+}
+.nav-anchor--first {
+	border-left:none;
+	padding-left:0;
+	box-shadow:none;
+}
+.nav-anchor--last {
+	border-right:none;
+	padding-right:0;
+}
+.nav-hidden > a {
+	display:none;
+}
+.nav-expand {
+	display:none;
+}
+
+
+//Sub navigation
+.nav-local {
+	position:absolute;
+	left:1em;
+	top:100px;
+	width:26.5%;
+	padding:0;
+	margin:0;
+	border-top:1px solid $default-border-color;
+	ul {
+		width:auto;
+	}
+	li {
+		margin:0;
+		line-height:normal;
+	}
+}
+
+.nav-anchor--local {
+	@include font-size(14px);
+	font-weight:600;
+	border-bottom:1px solid $default-border-color;
+	display:block;
+	padding:1em 0;
+
+}
+.nav-level-2 {
+	margin-top:-6px;
+	padding:0;
+	margin-bottom:0;
+	padding-bottom:6px;
+	.nav-anchor {
+		padding-left:em(30px);
+		padding-top:8px;
+		padding-bottom:8px;
+		border:0;
+	}
+	border-bottom: 1px solid $default-border-color;
+}
+.nav-level-3 { 
+	margin:0;
+	padding:0;
+	.nav-anchor {
+		padding-left:em(60px);
+		font-weight:400;
+	}
+}
+.nav-level-4 { 
+	margin:0;
+	padding:0;
+	.nav-anchor {
+		padding-left:em(90px);
+	}
+}
+.nav-expanded > a {
+	border-bottom:0; 
+}
+
+//Handle item expansion and hide preloaded items
+.nav-children ul {
+	display:none;
+}
+.nav-expanded > ul {
+	display:block;
+}
+
+
+//Tool navigation
+
+.nav-tools {
+	@include reset-ul;
+	position:absolute;
+	top:em(-121px);
+	right:1em;
+	li {
+		display:inline-block;
+		margin:0 .45em 0 0;
+		line-height:normal;
+		&:after {
+			content:'';
+			border-right:1px solid $default-border-color;
+			margin-left:.7em;
+			display:inline-block;
+			height:.9em;
+			vertical-align:middle;
+		}
+		&:last-child:after {
+			border-right:none;
+			margin-left:0;
+		}
+		&:last-child {
+			margin-right:0;
+		}
+	}
+}
+.nav-tools-anchor {
+	font-size:em(13px);
+	display:inline;
+}
+.nav-tools-translate:after {
+	display:none !important;
+}
+
+//On page edit for tools
+div.tooledit {
+   right: 1em;
+   top: -7.2em;
+   position: absolute;
+}
+
+div.tooledit .nav-tools {
+    position:static;
+}
+
+
+/* Medium size and narrow screen (tablets etc) */
+@media only screen and (max-width: $break-medium) {
+	@import "navigation.curtain";
+	.nav { overflow:visible; }
+	.drop-button .icon {
+		@include linear-gradient(#f1f1f1, #d4d4d4);
+	}
+} 
+
+/* Narrow screen (smart phones etc) */
+@media only screen and (max-width: $break-narrow) {  
+	
+}
+
+

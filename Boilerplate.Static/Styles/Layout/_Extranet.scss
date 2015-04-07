@@ -1,0 +1,38 @@
+﻿/* #Extranet
+================================================== */
+form.clean .container-body {
+    border: none;
+    padding-top: 0;
+}
+
+form.clean .form-group {
+    border: none;
+    padding-bottom: 0;
+}
+
+.list--representatives {
+	width:auto;
+    li {
+        padding: 0 0 em(30px) 0;
+        margin-bottom: em(30px);
+        margin-top: 0;
+        overflow: initial;
+        position: initial;
+    }
+
+    li:first-child {
+        margin-top: em(30px);
+    }
+
+    li.list-item:after {
+        content: '';
+        position: initial;
+        height: auto;
+    }
+
+    h3 {
+        margin: 0 0 em(20px) 0;
+        text-transform: none;
+        font-size: em(18px);
+    }
+}

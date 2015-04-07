@@ -1,0 +1,87 @@
+﻿/*
+Buttons
+
+Any element can be used as a button e.g. `<a>` and `<button>`. Make sure to use aria role attribute `role="button"` if `<a>` is used as actual buttons rather than anchors.
+
+.button--secondary - Used by secondary actions e.g. cancel.
+.button--small     - Small button.
+.button--cta       - Call to action.
+
+Markup:
+<a href="/" class="button {$modifiers}" role="button">Lorem ipsum</a>
+
+Styleguide 1.
+*/
+
+
+.button {
+	@include normalize-font;
+	@include appearance(none);
+	background:$action-color;
+	border:none;
+	border-radius:3px;
+	color:$action-color-text;
+	cursor:pointer;
+	display:inline-block;
+	font-size:em(15px);
+	font-weight:600;
+	height:auto;
+	line-height:1;
+	margin:0;
+	margin-right:em(12px,15px);
+	margin-bottom:em(16px,15px);
+	padding:em(14px,15px) em(18px,15px) em(15px,15px);
+	text-decoration:none;
+	transition:background 150ms ease;
+	&:hover {
+		background:$action-color-hover;
+		text-decoration:none;
+	}
+}
+
+.button--cta {
+	border:1px solid $action-color-border;
+	box-shadow:0 1px 0 rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,.5) inset;
+	font-size:em(17px);
+	font-family:$default-alternative-font;
+	font-weight:700;
+	padding-top:12px;
+	padding-bottom:12px;
+	padding-right:em(32px,17px);
+	padding-left:em(32px,17px);
+	text-transform:uppercase;
+	text-shadow:0 1px 1px rgba(0,0,0,0.2);
+}
+
+.button--secondary {
+	background:#ddd;
+	color:#333;
+	&:hover {
+		background:#d9d9d9;
+	}
+}
+.button--small {
+	font-size:em(14px);
+}
+
+/*
+Button with icon
+
+You can use any icon with a button
+
+Markup:
+<a href="/" class="button" role="button">
+    <span class="icon icon-search" aria-hidden="true"></span>Lorem ipsum
+</a>
+<a href="/" class="button" role="button">
+    <span class="icon icon-search icon--lg" aria-hidden="true"></span>Lorem ipsum
+</a>
+
+Styleguide 1.1.
+*/
+
+.button {
+    .icon {
+        margin-right:.4em;
+    }
+}

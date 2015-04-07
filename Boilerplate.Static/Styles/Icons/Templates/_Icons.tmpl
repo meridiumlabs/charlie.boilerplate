@@ -1,0 +1,19 @@
+﻿/*
+Available icons
+
+Lorem
+
+Markup:
+<% _.each(glyphs, function(glyph) { %><span class="icon icon-<%= glyph.name %> icon--fw" aria-hidden="true"></span> .icon-<%= glyph.name %><br /><br /><% }); %>
+
+Styleguide 3.3.
+*/
+
+
+<% _.each(glyphs, function(glyph) { %>$icon-css-prefix-<%= glyph.name %>: "\<%= glyph.codepoint.toString(16).toUpperCase() %>";
+<% }); %>
+<% _.each(glyphs, function(glyph) { %>
+.#{$icon-css-prefix}-<%= glyph.name %>:before {
+	content: "#{$icon-css-prefix-<%= glyph.name %>}";
+}<% }); %>
+

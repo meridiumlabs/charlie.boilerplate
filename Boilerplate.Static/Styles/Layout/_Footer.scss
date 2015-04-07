@@ -1,0 +1,114 @@
+﻿
+
+/* #Footer
+================================================== */
+#footer {
+	background:$background-footer;
+	min-height:300px;
+	padding:55px 0 50px 0;
+	line-height:20px;
+}
+#footer .grid {
+	@include font-size(15px);
+}
+.footer-column {
+	width:24%;
+}
+
+.footer-logotype {
+	margin-bottom:50px;
+}
+
+.footer-heading {
+	font-weight:700;
+	margin:0 0 .6em;
+	display:inline-block;
+}
+.footer-heading--social {
+	margin:0 0 .65em;
+}
+.footer-social-list {
+	@include reset-ul;
+	li {
+		display:inline-block;
+		line-height:0;
+		margin-right:5px;
+		margin-bottom:5px;
+	}
+	li:last-child {
+		margin-right:0;
+	}
+}
+.footer-social-item {
+	font-size:38px;
+	display:block;
+	width:38px;
+	height:38px;
+	white-space:nowrap;
+	position:relative;
+	line-height:0;
+	.icon {
+		text-indent:0;
+		position:absolute;
+		top:0;
+		left:-9px;
+		&:before {
+		}
+	}
+	&:after {
+		display:none !important;
+	}
+}
+.ie .footer-social-item {
+	margin-top:10px;
+}
+
+.footer-information-block {
+	min-height:95px;
+	p {
+		margin-bottom:.5em;
+		width:auto;
+	}
+	ul {
+		@include reset-ul;
+		li {
+			font-size:em(14px,15px);
+		}
+	}
+}
+
+/* Medium size and narrow screen (tablets etc) */
+@media only screen and (max-width: $break-medium) {
+
+}  
+
+/* Narrow screen (smart phones etc) */
+@media only screen and (max-width: $break-narrow) {   
+	#footer {
+		padding-top:45px;
+		.wrap {
+			position:static; //Fixes share overlay
+		}
+	}
+	.footer-column {
+		width:auto;
+		border-bottom:1px solid rgba(255,255,255,0.2);
+		text-align:center;
+		padding:.75em 0 1em;
+		margin:.75em 0;
+		&:last-child {
+			border-bottom:0;
+			padding-bottom:0;
+			margin-bottom:0;
+		}
+	}
+	.footer-logotype {
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom:20px;
+		display:block;
+	}
+	.footer-information-block {
+		min-height:78px;
+	}
+}

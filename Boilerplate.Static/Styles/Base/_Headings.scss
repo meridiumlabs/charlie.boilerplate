@@ -1,0 +1,43 @@
+﻿
+/*doc
+---
+title: Headings
+name: headings
+category: Common - Headings
+---
+
+```html_example
+<h1>Lorem ipsum</h1>
+<h2>Lorem ipsum</h2>
+<h3>Lorem ipsum</h3>
+```
+
+*/
+
+h1, h2, h3 {
+	font-family:$default-heading-font;
+}
+h1 {
+    @include font-size(32px);
+    font-weight:700;
+    margin:0 0 em(19px,32px) 0;
+}
+h2 {
+    @include font-size(20px);
+    font-weight:700;
+    margin:em(30px,20px) 0 em(19px,20px);
+}
+
+h3 {
+    @include font-size(16px);
+    font-weight:700;
+	text-transform:uppercase;
+    margin:em(33px,16px) 0 em(21px,16px);
+}
+
+.title {
+	font-weight:700;
+	margin-bottom:em(7px,15px);
+	font-size:em(15px);
+	display:block;
+}

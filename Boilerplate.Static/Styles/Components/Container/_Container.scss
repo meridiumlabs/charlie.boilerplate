@@ -1,0 +1,358 @@
+﻿/*
+Container
+
+Containers can contain text, list
+
+.container--solid   - Creates a light solid background
+
+Markup:
+<div class="container {$modifiers}">
+	<h2 class="container-heading">
+		Lorem ipsum dolor sit amet
+	</h2>
+	<div class="container-body">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt, justo sit amet viverra ullamcorper</p>
+	</div>
+</div>
+
+Styleguide 2.0
+*/
+
+.container {
+	@include clearfix;
+	border:1px solid $default-border-color;
+	margin:0  0 em(40px);
+	position:relative;
+	p {
+		width:auto;
+	}
+}
+h2 + .container, 
+h3 + .container {
+	margin-top:em(28px);
+}
+.container--solid {
+	background:#f5f5f5;
+}
+.container--editorial {
+	margin:2em 0;
+}
+
+.container-heading {
+	display:block;
+	font-size:em(20px);
+	margin:em(16px,20px);
+	font-family:$default-heading-font;
+}
+.container-heading:first-letter {
+    text-transform: uppercase;
+}
+.container-body {
+	margin:em(19px) em(19px);
+}
+.container-heading + .container-body {
+	border-top:1px solid $default-border-color;
+	padding-top:1em;
+}
+.container-heading--solid + .container-body {
+	border-top:none;
+	padding-top:0;
+}
+.container-body-heading {
+	text-transform:none;
+	font-size:em(17px);
+	line-height:em(20px,17px);
+	margin:0 0 em(6px);
+	padding:0;
+}
+
+.container-body-image {
+	padding-left:191px;
+	padding-top:4px;
+	position:relative;
+	min-height:138px;
+	img {
+		position:absolute;
+		top:8px;
+		left:0;
+	}
+}
+
+/*
+Container heading variations
+
+Container headings can have a variation of modifiers that can be combined.
+
+.container-heading--solid       - Makes the heading have a solid background
+.container-heading--uppercase   - Text is uppercase
+.container-heading--small       - Makes the heading a bit smaller
+
+Markup:
+<div class="container container--solid">
+	<h2 class="container-heading {$modifiers}">
+		Lorem ipsum dolor sit amet
+	</h2>
+	<div class="container-body">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt, justo sit amet viverra ullamcorper</p>
+	</div>
+</div>
+
+Styleguide 2.1.0
+*/
+
+.container-heading--small {
+	font-size:em(15px);
+	margin:em(16px,15px) em(18px,15px);
+	font-weight:700;
+}
+.container-heading--solid {
+	font-size:em(17px);
+	background:#000;
+	color:#fff;
+	padding:em(16px,17px) em(19px,17px) em(18px,17px);
+	margin:-1px;
+}
+.container-heading--uppercase {
+	font-size:em(17px);
+	text-transform:uppercase;
+	margin:em(16px,15px);
+ }
+
+
+/*
+Container list
+
+A container can contain a list of links
+
+.container-list--divided       - Divides each list item with a border.
+.container-list--flat          - Floats list items
+
+Markup:
+<div class="container">
+    <h2 class="container-heading container-heading--solid">Lorem ipsum dolor</h2>
+    <div class="container-body">
+        <ul class="container-list {$modifiers}">
+            <li><a href="/">Lorem ipsum</a></li>
+            <li><a href="/">Dolor sit amet</a></li>
+            <li><a href="/">Consectetur adipiscing elit</a></li>
+        </ul>
+    </div>
+</div>
+
+Styleguide 2.2.0
+*/
+
+.container-list {
+	@include reset-ul;
+	margin:em(-9px) 0 0;
+	li {
+		margin-bottom:.75em;
+        line-height:em(20px); 
+        position:relative;
+	}
+    a {
+        font-size:em(15px);
+		text-decoration:none;
+    }
+	.icon {
+		margin-right:5px;
+	}
+    .right-aligned{
+        position:absolute;
+        right:0;
+    }
+}
+p + .container-list--divided {
+	border-top:1px solid $default-border-color;
+	margin-top:0;
+}
+.container-list--divided + p {
+    width:100%;
+}
+.container-list--divided {	
+	li {
+		border-bottom:1px solid $default-border-color;
+		padding:em(9px) 0 em(10px);
+		margin-bottom:0;
+	}
+	li:last-child {
+		border-bottom:none;
+	}
+	.icon--lg {
+		margin-left:-.5em;
+	}
+}
+
+.container-list--flat {
+	@include reset-ul;
+	@include clearfix;
+	margin:0 0 -10px;
+	
+	li {
+		float: left;
+		margin: 0 45px 12px 0;
+	}
+}
+
+/*
+Container list paragraphs
+
+A container can also have paragraphs of over and under or a link to more info.
+
+Markup:
+<div class="container">
+    <h2 class="container-heading container-heading--solid">Lorem ipsum dolor</h2>
+    <div class="container-body">  
+        <p>Lorem ipsum dolor sit amet.</p>          
+        <ul class="container-list container-list--divided">
+            <li><a href="/">Lorem ipsum</a></li>
+            <li><a href="/">Dolor sit amet</a></li>
+            <li><a href="/">Consectetur adipiscing elit</a></li>
+        </ul>        
+        <p>Lorem ipsum dolor.</p>
+    </div>
+</div>
+<div class="container">
+    <h2 class="container-heading container-heading--solid">Lorem ipsum dolor</h2>
+    <div class="container-body">            
+        <ul class="container-list container-list--divided">
+            <li><a href="/">Lorem ipsum</a></li>
+            <li><a href="/">Dolor sit amet</a></li>
+            <li><a href="/">Consectetur adipiscing elit</a></li>
+        </ul>
+        <p class="container-divider container-divider--action">
+            <a href="/">Lorem ipsum</a>
+        </p>
+    </div>
+</div>
+
+Styleguide 2.2.1
+*/
+
+
+
+
+
+
+// ### Image 
+.container-image {
+	margin-bottom:em(14px);
+	display:block;
+	max-width:100%;
+}
+
+.container-image--teaser{
+    margin:0;
+}
+
+.container-image--movie{
+    cursor:pointer;
+}
+
+.container-divider {
+	border-top:1px solid $default-border-color;
+	padding-top:1.25em;
+}
+
+.container-divider--action {
+	text-align:right;
+	padding-top:.5em;
+}
+
+.container-action {
+	display:inline-block;
+}
+
+// ## Toggle
+.container-heading {
+	a.toggle-control {
+		color:$default-font-color;
+		display:block;
+		font-weight:700;
+		&:hover { 
+			text-decoration:none;
+		}
+	}
+	.toggle-icon {
+		font-weight:400;
+		font-size:15px;
+		top:11px;
+		right:16px;
+		color:$default-anchor-color;
+		&:before {
+			top:2px;
+		}
+	}
+}
+
+
+
+
+
+//Container grid
+.grid-col-2.container {
+	min-height:260px;
+}
+.grid-col-3.container {
+	min-height:300px;
+}
+
+.container.toggle + .container.toggle {
+	margin-top:-22px;
+}
+
+
+/* Medium size and narrow screen (tablets etc) */
+@media only screen and (max-width: $break-medium) {
+	.container {
+		margin-bottom:em(30px);
+		p {
+			width:80%;
+		}
+	}
+	.grid-col-2.container {
+		min-height:320px;
+		p {
+			width:auto;
+		}
+	}
+	.grid-col-3.container {
+		min-height:350px;
+		p {
+			width:auto;
+		}
+	}
+	.grid-col-1.container {
+		p {
+			width:auto;
+		}
+	}
+}
+@media only screen and (max-width: $break-narrow) {
+	.container,
+	.grid-col-2.container,
+	.grid-col-3.container {
+		min-height:0;
+	}
+	.container-list--flat {
+		li {
+			float: none;
+			margin: 0 0 em(15px) 0;
+		}
+	}
+	.container {
+		p {
+			width:auto;
+		}
+	}
+    .container-body-image {
+	    padding-left:0px;
+	    padding-top:4px;
+	    position:relative;
+	    min-height:138px;
+	img {
+        display:none;
+	}
+}
+
+}

@@ -1,0 +1,121 @@
+﻿/* #Main 
+================================================== */
+
+body.home main {
+	padding-bottom:2em;
+	min-height:400px;
+}
+
+.main-top {
+	padding-top:em(40px);
+}
+.main-path {
+	margin:38px 0 0 32.653%;
+	a {	
+		@extend .path-anchor; 
+	}
+	span { 
+		@extend .path-separator;
+	}
+}
+main {
+	display:block;
+}
+.content {
+	min-height:500px;
+	padding:45px 0 1em 32.653%;
+}
+.main-path + .content {
+	padding-top:30px;
+}
+
+body.full-width {
+	.content {
+		min-height:500px;
+		padding:45px 0 1em 0;
+	}
+	.main-path {
+		margin:33px 0 0 0;
+	}
+	.nav-local {
+		display:none;
+	}
+}
+
+.content-image {
+	display:block;
+	margin-bottom:2.2em;
+	max-width:100%;
+	width:100%;
+	height:auto;
+}
+
+.topimage-edit {
+	margin-bottom:2em;
+	min-height:70px;
+}
+
+.mainbody-edit {
+	margin-bottom:2em;
+	min-height:150px;
+}
+
+.edit-mode .main-top {
+	margin-bottom:3em;
+}
+
+.content-back-anchor {
+    font-size:em(14px);
+    margin-left:-2px;
+    display:inline-block;
+    margin-bottom:em(20px);
+    .icon-arrow-back:before {
+        font-size:82%; 
+        position:relative;
+        top:-1px; 
+        left:2px;
+    }
+    &:hover {
+        text-decoration:none;
+    }
+}
+
+/* Medium size and narrow screen (tablets etc) */
+@media only screen and (max-width: $break-medium) {
+	.main-top {
+		padding-top: em(30px);
+	}
+	.content { padding: 0 0 1em; }
+	.main-path {
+		margin:-1em 0 0;
+	} 
+	.main-path + .content {
+	padding-top:20px;
+}
+}  
+
+/* Narrow screen (smart phones etc) */
+@media only screen and (max-width: $break-narrow) {  
+	p {
+		width:100%;
+	} 
+	ul,ol {
+		width:auto;
+	}
+	.content {
+		padding:0 0 1em 0;
+	}
+	.content-image {
+		
+	}
+	.main-top {
+		padding-top:0;
+		padding-bottom:0;
+		.main-top-wrap {
+			max-width:none;
+			padding:0;
+		}
+	}
+
+
+}

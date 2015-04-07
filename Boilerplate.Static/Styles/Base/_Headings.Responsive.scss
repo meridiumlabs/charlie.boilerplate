@@ -1,0 +1,7 @@
+﻿
+/* Narrow screen (smart phones etc) */
+@media only screen and (max-width: $break-narrow) {  
+	h1 {
+		@include font-size(27px);
+	}
+}

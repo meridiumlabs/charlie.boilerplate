@@ -1,0 +1,53 @@
+﻿.auth {
+	.nav-local {
+		margin-top:em(77px);
+	}
+}
+.auth-bar {
+	background:#fafafa;
+	border-bottom:1px solid $default-border-color;
+	position:relative;
+	min-height:75px;
+}
+.auth-bar-heading {
+	font-size:em(26px);
+	font-weight:600;
+	position:absolute;
+	top:em(23px,26px);
+}
+.auth-bar-user {
+	position:absolute;
+	right:em(130px,14px);
+	font-size:em(14px);
+	top:em(17px,14px);
+	line-height:em(20px,14px);
+	color:#777;
+}
+.auth-bar-signout {
+	position:absolute;
+	right:4px;
+	top:em(15px);
+}
+
+/* Medium size and narrow screen (tablets etc) */
+@media only screen and (max-width: $break-medium) {
+	.auth {
+		#header {
+			margin-bottom:0;
+		}
+		main > .wrap { 
+			margin-top:em(33px);
+		}
+	}
+}  
+
+/* Narrow screen (smart phones etc) */
+@media only screen and (max-width: $break-narrow) {  
+	.auth-bar-heading { 
+		display:none; 
+	}
+	.auth-bar-user {
+		right:auto;
+		left:16px;
+	}
+}

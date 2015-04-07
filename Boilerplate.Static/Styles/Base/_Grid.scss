@@ -1,0 +1,44 @@
+﻿.grid {
+    @include justify();
+	font-size:0.1px;
+}
+.grid-col {
+    display:inline-block;
+	vertical-align:top;
+	box-sizing:border-box;
+	text-align:left;
+	font-size:$base-font-size;
+}
+
+.grid-col-1 {
+	@extend .grid-col;
+	width:100% !important;
+}
+.grid-col-3 {
+	@extend .grid-col;
+	width:31.63265306% !important;
+}
+.grid-col-2 {
+	@extend .grid-col;
+	width:48.5% !important;
+}
+.grid-col-4 {
+	@extend .grid-col;
+	width:22% !important;
+}
+
+// ## Medium size and narrow screen (tablets etc)
+@media only screen and (max-width: $break-medium) {
+
+} 
+
+// ## Narrow screen (smart phones etc)
+@media only screen and (max-width: $break-narrow) {   
+	.grid {
+		text-align:left;
+	}
+	.grid-col {
+		display:block;
+		width:auto !important;;
+	}
+}

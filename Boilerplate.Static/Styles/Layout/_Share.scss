@@ -1,0 +1,35 @@
+﻿.share-container {
+	@extend .container;
+	left:0;
+	right:0;
+	top:em(44px);
+	z-index:900;
+	margin-top:0;
+	position:absolute;
+	display:none;
+}
+.share-container:before {
+	content:'';
+	width:22px;
+	height:10px;
+	background:url(/static/images/container-arrow-up.png);
+	background-size:22px 10px;
+	background-repeat:no-repeat;
+	position:absolute;
+	right:59px;
+	top:-10px;
+}
+.share-container--nojs {
+	display:block;
+}
+
+/* Narrow screen (smart phones etc) */
+@media only screen and (max-width: $break-narrow) { 
+	.share-container {
+		top:em(67px);
+	}
+	.share-container:before { 
+		right:auto;
+		left:43px;
+	}
+}

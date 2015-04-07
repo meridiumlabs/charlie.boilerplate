@@ -1,0 +1,24 @@
+﻿
+/* #Sprites
+================================================== */
+
+// Only use sprite images when icon fonts are not applicable. 
+// Make sure to update both the low and high resolution sprite.
+
+.sprite {
+    background-size: ($sprite-width / 2) ($sprite-height / 2);
+    background-repeat: no-repeat;
+    background-image: url(/content/images/sprite.png);
+}
+
+// ##Retina awesomeness
+@media (min--moz-device-pixel-ratio: 1.5), 
+       (-o-min-device-pixel-ratio: 3/2), 
+       (-webkit-min-device-pixel-ratio: 1.5), 
+       (min-device-pixel-ratio: 1.5), 
+       (min-resolution: 144dpi), 
+       (min-resolution: 1.5dppx) {
+    .sprite {
+        background-image: url(/content/images/sprite@2x.png); 
+    }
+}

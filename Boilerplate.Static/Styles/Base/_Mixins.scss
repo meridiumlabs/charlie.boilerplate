@@ -1,0 +1,116 @@
+﻿
+/* #Mixins
+================================================== */
+
+@mixin font-size($px) {
+	font-size:($px / $base-font-size) * 100%;
+}
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+@mixin vertical-align {
+    position: relative; 
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+@mixin sprite($x, $y) {
+	@extend .sprite;
+	background-position:$x $y;
+}
+@mixin clearfix { 
+    &:after { 
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@mixin justify {
+	text-align:justify;
+	margin:0 0 -1em; //Removes the empty space from pseudo below.
+	&:after {
+		content: '';
+		width: 100%;
+		display: inline-block; 
+	}
+} 
+@mixin normalize-font {
+	font-size:100%;
+	font-family:$default-font-family;
+	font-weight:400;
+	color:$default-font-color;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+@mixin transition($rule, $time, $easing) {
+	-webkit-transition:$rule $time $easing;
+}
+@mixin appearance($rule) {
+	-webkit-appearance: $rule;
+	   -moz-appearance: $rule;
+            appearance: $rule;
+}
+@mixin reset-ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+	font-size:100%;
+	width:auto;
+	ul {
+		padding:0;
+		margin:0;
+		list-style:none;
+		font-size:100%;
+	}
+	li {
+		padding:0;
+		margin:0;
+		line-height:1;
+	}
+}
+@mixin reset-table {
+	width:auto;
+	margin:0;
+	padding:0;
+	tr td, 
+	tr th {
+		background:none;
+	}
+}
+@mixin rotate-on-hover {
+	-webkit-transition:-webkit-transform 0.2s ease-in-out;
+	-moz-transition:-moz-transform 0.2s ease-in-out;
+	transition:transform 0.2s ease-in-out;
+	-webkit-backface-visibility: hidden;
+	&:hover {
+		-webkit-transform: rotate(-25deg);
+		-moz-transform: rotate(-25deg);
+		transform: rotate(-25deg);
+	}
+}
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  //filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin tip {
+    &:before {
+        content: '';
+        width: 22px;
+        height: 10px;
+        background: url(/static/images/container-arrow-up.png);
+        background-size: 22px 10px;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 50%;
+        margin-left:-11px;
+        top: -10px;
+    }
+}

@@ -1,0 +1,21 @@
+﻿.handlingque {
+	.container-body {
+		text-align:center;
+	}
+}
+.handlingque-days {
+	background:#f5f5f5;
+	border:1px solid $default-border-color;
+	display:inline-block;
+	padding:em(10px) em(16px) em(14px);
+	font-weight:700;
+	margin:em(5px) 0 em(20px) 0;
+	span {
+		font-size:em(35px);
+		display:block;
+		border-bottom:1px solid $default-border-color;
+		padding-bottom:em(13px,35px);
+		margin-bottom:em(10px,35px);
+	}
+}
+.container--solid .handlingque-days { background:#fff; }

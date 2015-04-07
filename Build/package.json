@@ -1,0 +1,39 @@
+{
+  "name": "fasab-intranet",
+  "version": "0.0.1",
+  "description": "FASAB Intranet",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-sass": "^1.3.3"
+  },
+  "devDependencies": {
+    "del": "^0.1.2",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-consolidate": "^0.1.2",
+    "gulp-ext-replace": "^0.1.0",
+    "gulp-iconfont": "^0.1.2",
+    "gulp-if": "^1.2.5",
+    "gulp-kss": "0.0.2",
+    "gulp-minify-css": "^1.0.0",
+    "gulp-sourcemaps": "^1.5.1",
+    "kss": "^2.0.2",
+    "lodash": "^2.4.1",
+    "run-sequence": "^0.3.6",
+    "yargs": "^3.6.0"
+  },
+  "scripts": {
+    "gulp": "gulp --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meridium/fasab-intranet"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meridium/fasab-intranet/issues"
+  },
+  "homepage": "https://github.com/meridium/fasab-intranet"
+}

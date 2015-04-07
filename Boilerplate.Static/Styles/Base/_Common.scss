@@ -1,0 +1,222 @@
+﻿// # Common elements
+// ==================================================
+
+// This css is also used by EPiServer tiny mce editor.
+// Do not use media queries in this file (f*cks upp editor)
+
+
+
+html {
+	height:100%;
+}
+body { 
+	@include normalize-font;
+    background: #fff;
+	height:100%;
+ }
+
+//Stylistically offset
+b {
+	font-weight:700; 
+}
+
+//Strong importance
+strong {
+	font-weight:700; 
+}
+
+//Stress emphasis
+em {
+	font-style:italic;
+	font-weight:600;
+}
+
+//Alternate voice
+i {
+	font-style:italic;
+}
+
+p {
+	line-height:1.4666666667;
+	margin-bottom:1.2em;
+	width:85%;
+	font-size:em(15px,16px);
+}
+
+//Quotes
+blockquote {
+	padding-left:1em;
+	display:inline-block;
+	margin-bottom:em(36px,18px);
+	margin-top:em(20px,18px);	
+	font-size:em(18px);
+	font-weight:300;
+	line-height:1.4705882353;
+	position:relative;
+	width:80%;
+	&:before {
+		content:'';
+		width:5px;
+		background:#333;
+		position:absolute;
+		left:em(1px,18px);
+		top:em(6px,18px);
+		bottom:5px;
+	}
+}
+
+q {
+    quotes: "“" "”" "‘" "’";
+    font-style:italic;
+    &:before {
+        content: open-quote;
+    }
+    &:after {
+        content: close-quote;
+    }
+}
+
+
+
+/* #Lists
+================================================== */
+
+ul,
+ol {
+	font-size:em(15px);
+	margin:1.5em 0;
+	padding-left:2em;
+	li {
+		margin-bottom:.5em;
+		line-height:1.4666666667;
+	}
+	width:80%;
+}
+ol { list-style:decimal; }
+ul { list-style:disc; }
+
+/* #Anchors
+================================================== */
+a { 
+	//@include transition(color, 300ms, ease);
+    color:$default-anchor-color;
+	text-decoration:none;
+	font-weight:600;
+    &:visited {
+    
+    }
+    &:hover {
+		text-decoration:underline;
+    }
+    /*&:active {
+		
+	}
+    &:focus:not(:active) {
+		outline:none;
+		background:$default-anchor-color;
+		outline-width: 2px;
+		outline-color: $default-anchor-color;
+		outline-style:solid;
+		color:#fff;
+    }*/
+}
+a[href^='http']:after,
+a[target='_blank']:after {
+	//content:'#{$icon-external}';
+	//font-family:$icon-font-name;
+	font-size:75%;
+	display:inline-block;
+	text-decoration:none;
+	top:-1px;
+	position:relative;
+}
+a[href^='mailto:'] {
+	white-space:nowrap;
+}
+
+.inverted a {
+	color:$default-anchor-color-inverted;
+	text-decoration:underline;
+}
+.explain {
+    text-decoration: none !important;
+    background: #ffd8d8;
+    color: #333;
+    cursor: help;
+    display: inline-block;
+    padding: 0 4px;
+    outline: none;
+    border-radius: 2px;
+	font-weight:400;
+    transition: none;
+}
+.explain:hover {
+    text-decoration: none;
+}
+.explain:focus {
+    background:#0075b1; 
+    color: #fff;
+}
+.separated {
+	margin-bottom:em(7px,15px);
+}
+.disabled {
+	opacity:.8;
+	p, h2, h3 {
+		opacity:.4;
+	}
+}
+
+/* #Common classes
+================================================== */
+.hidden {
+	display:none;
+}
+.visually-hidden {
+	position:absolute;
+	left:-9999px;
+}
+.lead {
+	@include font-size(16px);
+	font-weight:700;
+	p {
+		font-size:100%;
+	}
+}
+.lead-edit {
+	min-height:70px;
+}
+h1 + .lead { margin-top:25px; }
+
+
+.nowrap {
+	white-space:nowrap;
+}
+.cf {
+	@include clearfix;
+}
+.right { 
+	float:right;
+}
+.left {
+	float:left;
+}
+
+.ui-disabled {
+    min-height: 0 !important;
+    color: #808080;
+}
+
+.deemphasized {
+	color:#777;
+}
+
+.bull {
+    display:inline-block;
+    margin:0 5px;
+    font-weight:700;
+    color:#aaa;
+}
+.bull + .icon-user {
+    margin-left:-3px;
+}

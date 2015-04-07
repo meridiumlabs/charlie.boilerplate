@@ -1,0 +1,135 @@
+﻿// ## Skip navigation
+
+#nav-skip {
+	@include reset-ul;
+	a {
+		@include font-size(13px);
+		font-weight:600;
+		position:fixed;
+		z-index:1000;
+		top:-999px;
+		&:focus {
+			top:0;
+			right:0;
+			left:0;
+			text-align:center;
+			line-height:2em;
+			background:$action-color;
+			outline:0;
+			color:#fff;
+			border:0;
+		}
+		&:before {
+			margin-right:4px;
+			margin-top:-2px;
+			display:inline-block;
+		}
+	} 
+	li {
+		line-height:1;
+	}
+}
+
+/* Medium screen (tablets etc) */
+@media only screen and (max-width: $break-medium) {  
+	
+	// ## Nav controls
+
+	#nav-skip a:focus {	
+		border-radius:2px;
+	}
+
+	.nav-skip-text {
+		position: absolute !important;
+		clip: rect(1px 1px 1px 1px); 
+		clip: rect(1px, 1px, 1px, 1px);
+		padding:0 !important;
+		left:6px;
+		bottom:0;
+		right:0;
+		top:11px;
+		border:0 !important;
+		height: 1px !important; 
+		width: 1px !important; 
+		overflow: hidden;
+		span {
+			display:none;
+		}
+	}
+	.nav-skip-link {
+		color:#333;
+		.icon {
+			display:inline-block;
+			
+			font-size:220%;
+		}
+	}
+
+	#nav-skip {
+		position:static;
+
+		.content:focus {
+			top:66px;
+
+		}
+
+		.nav-skip-link--nav,
+		.nav-skip-link--search {
+			@include font-size(10px);
+			position:absolute;
+			top:em(18px,10px);
+			display:block;
+			text-transform:uppercase;
+			width:em(49px,10px);
+			height:em(29px,10px);
+			font-weight:400;
+			.icon {
+				display:inline;
+			}
+			&:hover {
+				text-decoration:none;
+			}
+			&:focus {
+				top:em(18px,10px);
+				padding:0;
+				line-height:1;
+
+			}
+			&:before {
+				font-size:225%;
+				color:#111;
+				display:block;
+				text-align:center;
+				line-height:1.5;
+				margin:0;
+			}
+
+		}
+		.nav-skip-link--nav {
+			left:1em;
+			padding-right:.5em;
+			border-right:1px solid $default-border-color;
+			&:focus {
+				left:1em;
+				right:auto;
+			}
+
+		}
+		.nav-skip-link--search {
+			right:1em; 
+			padding-left:.5em;
+			border-left:1px solid $default-border-color;
+			&:focus {
+				right:1em;
+				left:auto;
+			}
+		}
+	}
+
+	html.nav-expanded {
+		.nav-skip-link--nav .icon:before {
+			content:'#{$icon-close}';
+		}
+	}
+
+}

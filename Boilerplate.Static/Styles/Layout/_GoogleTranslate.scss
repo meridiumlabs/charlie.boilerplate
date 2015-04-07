@@ -1,0 +1,21 @@
+﻿#google-translate-dialog {
+    position: absolute;
+    width: 240px;
+    left:-15px;
+    top: 32px;
+    z-index: 999;
+	padding-top:1em;
+	min-height:0;
+	p {
+		margin-bottom:0;
+		padding-bottom:1em;
+		width:auto;
+	}
+	.form-label {
+		font-size:em(13px);
+		margin-bottom:em(7px, 13px);
+	}
+	.form-field {
+		margin-bottom:1em;
+	}
+}

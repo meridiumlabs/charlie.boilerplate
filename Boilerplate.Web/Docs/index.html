@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Styleguide</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="public/kss.css" type="text/css" />
+        <link rel="stylesheet" href="public/style.css" type="text/css" />
+        <!--[if lt IE 9]>
+            <script src="public/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body class="kss-node" id="kss-node">
+        <a href="#kss-navigation" id="kss-menu-link" class="kss-menu-link"><span></span></a>
+        <header class="kss-header">
+            <div class="kss-container">
+                <h1>Styleguide</h1>
+            </div>
+        </header>
+
+        <div class="kss-sidebar">
+            <nav class="kss-menu">
+                <ul class="kss-menu-list" data-kss-ref="0">
+                    <li><a href="./index.html">Overview</a></li>
+                    <li><a href="section-1.html#section-1">1. Buttons</a></li>
+                    <li><a href="section-2.html#section-2">2. Container</a></li>
+                    <li><a href="section-3.html#section-3">3. Icons</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="kss-container">
+            <div class="kss-content">
+
+                <div class="kss-markdown-body">
+                    <h1 id="fasab-6f">FASAB 6F</h1>
+<p>Vi använder Sass som &quot;pre processor&quot; för css. Alla scss-filer ligger sparade under /content/styles. Gulp måste köra i bakgrunden för att scss-filerna ska kompileras och flyttas till /static/styles. Läs mer om hur gulp fungerar och konfigureras under /build/README.md</p>
+<p>Följande struktur används:</p>
+<ul>
+<li><strong>Assets</strong> - Ikoner och annat smått och gott.</li>
+<li><strong>Base</strong> - Generell css som resets, konfiguration etc.</li>
+<li><strong>Components</strong> - Fristående komponenter.</li>
+<li><strong>Layout</strong> - Ramverk, t ex menyer. Saker som har en specifik plats och används på ett ställe.</li>
+<li><strong>Vendor</strong> - Filer för tredjepartskomponenter.</li>
+<li><strong>Themes</strong> - Konfiguration och css för teman.</li>
+</ul>
+<p>Dela upp css:en i små hanterabara filer med ett ansvar. All css sammanfogas i <code>app.default.scss</code>. Varje tema har en specifik fil som heter <code>app.themename.scss</code> som bygger på <code>app.default.scss</code> tillsammans med den temaspecifika css som ligger under /content/styles/themes/.</p>
+<h4 id="variabler">Variabler</h4>
+<p>Använd variabler för färger, fonter etc som används på flera ställen. Överdriv dock inte. Används t ex en färg endast på ett ställe så finns ingen anledning att ha en variabel. Namnge variabler semantiskt, t ex <code>$color-error</code> och inte <code>$color-red</code>.</p>
+<h4 id="mixins">Mixins</h4>
+<p>I projektet finns ett antal mixins. Dessa ska dokumenteras i style guiden.</p>
+<h4 id="nesting">Nesting</h4>
+<p>Undvik i möjligaste mån nesting. Använd vår metodik istället. Undantag kan göras för element som ej kommer ha barn, pseudo-element eller olika states.</p>
+<h4 id="extensions">Extensions</h4>
+<p>Extensions kan vara kraftfullt men missbruka det inte.</p>
+<h2 id="metodik-f-r-att-strukturera-css">Metodik för att strukturera css</h2>
+<p>Vi använder en BEM-inspirerad metodik för att strukturera css uppbyggt av komponenter, element och modifierare.</p>
+<h3 id="komponenter">Komponenter</h3>
+<p>En komponent är en grupp av element. Komponenten ska kunna leva för sig själv var som helst på webbplatsen utan att påverkas av annan css eller av elementet klassen är satt på. Kan vara t ex vara en puff med bild, en länk och text.</p>
+<pre><code class="lang-html">&lt;div class=&quot;teaser&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Försök att namnge en kompenent med ett semantiskt ord. Inte vad det används till utan vad det är.</p>
+<p>Var extremt försiktig om du ändrar i en befintlig komponent.</p>
+<h3 id="element">Element</h3>
+<p>Ett element är en del av en komponent och namnges av komponentens namn följt av elementets namn. Elementets utseende ska inte påverkas av vilket html-element klassen är satt på. Rubriken i följande exempel skulle lika gärna kunna vara en <code>&lt;h3&gt;</code> eller en <code>&lt;strong&gt;</code>.</p>
+<pre><code class="lang-html">&lt;div class=&quot;teaser&quot;&gt;
+    &lt;img src=&quot;foo.jpg&quot; alt=&quot;&quot; class=&quot;teaser-image&quot; /&gt;
+    &lt;h2 class=&quot;teaser-heading&quot;&gt;Lorem ipsum&lt;/h2&gt;
+    &lt;p class=&quot;teaser-lead&quot;&gt;Lorem ipsum dolor sit amet.&lt;/p
+&lt;/div&gt;
+</code></pre>
+<p>Undvik att använda element utanför sin komponent. Dock så kan komponenter ligga i andra komponenter.</p>
+<h3 id="modifierare">Modifierare</h3>
+<p>En modifierare förändrar utseendet på en komponent eller ett element och namnges med dubbla streck, t ex <code>teaser—solid</code>. Följande exempel sätter en bakgrundsfärg på vår puff. </p>
+<pre><code class="lang-html">&lt;div class=&quot;teaser teaser—solid&quot;&gt;
+    &lt;img src=&quot;foo.jpg&quot; alt=&quot;&quot; class=&quot;teaser-image&quot; /&gt;
+    &lt;h2 class=&quot;teaser-heading&quot;&gt;Lorem ipsum&lt;/h2&gt;
+    &lt;p class=&quot;teaser-lead&quot;&gt;Lorem ipsum dolor sit amet.&lt;/p
+&lt;/div&gt;
+</code></pre>
+<p>Gör endast små förändringar med modifierare. Överväg att skapa en ny komponent eller ett nytt element om förändringarna är större.</p>
+<h2 id="id-n-och-klasser">ID:n och klasser</h2>
+<p>Undvik att använda id:en för att hänga upp css på. Använd enbart klasser. Applicera aldrig css direkt på ett element och använd dig inte av &quot;cascading&quot; (t ex <code>div p { color:red; }</code>). Undantag kan vara när du inte kan sätta en klass på ett element eller när elementet aldrig kommer att ha flera barn.</p>
+<h2 id="storlekar-och-relativa-m-tt">Storlekar och relativa mått</h2>
+<p>Relativa måttenheter (em och %) ska användas. Webbplatsens basfontstorlek är 16px. Det finns en mixin som omvandlar pixlar till em.</p>
+<pre><code class="lang-scss">font-size:em(10px);
+</code></pre>
+<p>Det går även att skicka in en ny basstorlek om den har ändrats.</p>
+<pre><code class="lang-scss">font-size:em(10px);
+margin:em(5px, 10px);
+</code></pre>
+<p>Försök sätta storleken så djupt som möjligt. T ex om paragrafer i en komponent ska vara 12px. Sätt storleken på <code>&lt;p&gt;</code> och inte på komponenten i sig.</p>
+<h2 id="states-focus-active-och-hover-">States (focus, active och hover)</h2>
+<p>Det är viktigt att kontrollera att alla states ser ok ut på den funktionalitet som byggs. Tabba igenom sidan och kontrollera att tabbordningen är logisk och att fokus ser bra ut och stämmer överens med webbplatsen i övrigt.</p>
+<p>Vid fokus ska länkar bli inverterade. Detta måste justeras när andra element än endast text länkas. </p>
+<h2 id="vendor-prefixes">Vendor prefixes</h2>
+<p>Använd den standard som w3c föreslår. gulp-autoprefixer kommer att lägga på de prefix som behövs.</p>
+
+                </div>
+            </div>
+
+            <footer class="kss-footer kss-container">
+                <p><small>Copyright &copy; 2014 <a href="http://studioupsidedown.com">Upside Down</a>. Code covered by the <a rel="license" href="http://sudhq.mit-license.org/">MIT license</a>.</small></p>
+            </footer>
+        </div>
+
+
+        <script src="public/highlight.pack.js"></script>
+        <script src="public/jquery-1.10.2.min.js"></script>
+        <script src="public/main.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,32 @@
+﻿// # Breakpoints
+// ==================================================
+
+// Media queries for the different widths the site responds to.
+
+
+// ## Default size (desktop)
+.wrap {
+	max-width:$site-width;
+	min-width:280px; 
+}
+
+// ## Medium size and narrow screen (tablets etc)
+@media only screen and (max-width: $break-medium) {
+	.wrap {
+		max-width:768px;
+	}
+}  
+
+// ## Narrow screen (smart phones etc)
+@media only screen and (max-width: $break-narrow) {   
+	.wrap {
+		max-width:360px; 
+		//max-width:640px; 
+	}	
+}    
+@media only screen 
+and (min-device-width : 320px)
+and (max-device-width : 568px) 
+and (orientation : landscape) {
+
+}

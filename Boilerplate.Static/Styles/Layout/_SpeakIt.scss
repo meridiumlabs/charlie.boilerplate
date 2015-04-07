@@ -1,0 +1,47 @@
+﻿.speakit-player {
+	position:relative;
+	padding-top:8px;
+	margin-top:33px;
+	border-top:1px solid $default-border-color;
+}
+.speakit-control {
+	color:$action-color;
+	font-size:29px;
+	cursor:pointer;
+	//position:absolute;
+	display:inline-block;
+	width:34px;
+	height:34px;
+	position:relative;
+	.icon {
+		left:-6px;
+		top:0;
+		position:absolute;
+	}
+}
+.speakit-progress {
+	position:absolute;
+	left:132px;
+	right:0;
+	top:21px;
+}
+
+
+.ws_hl {
+	background-color: $action-color;
+	color:#fff;
+}
+.sent_hl {
+	background-color: $default-border-color;
+}
+
+.no-js #speaklink {
+	display:none;
+}
+
+/* Narrow screen (smart phones etc) */
+@media only screen and (max-width: $break-narrow) { 
+	.speakit-player {
+		margin-top: 14px;
+	}
+}

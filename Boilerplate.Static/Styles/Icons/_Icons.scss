@@ -1,0 +1,31 @@
+/*
+Available icons
+
+Lorem
+
+Markup:
+<span class="icon icon-phone icon--fw" aria-hidden="true"></span> .icon-phone<br /><br /><span class="icon icon-search icon--fw" aria-hidden="true"></span> .icon-search<br /><br /><span class="icon icon-home2 icon--fw" aria-hidden="true"></span> .icon-home2<br /><br /><span class="icon icon-1427823539_f0ac icon--fw" aria-hidden="true"></span> .icon-1427823539_f0ac<br /><br />
+
+Styleguide 3.3.
+*/
+
+
+$icon-css-prefix-phone: "\E001";
+$icon-css-prefix-search: "\E002";
+$icon-css-prefix-home2: "\E003";
+$icon-css-prefix-1427823539_f0ac: "\E004";
+
+
+.#{$icon-css-prefix}-phone:before {
+	content: "#{$icon-css-prefix-phone}";
+}
+.#{$icon-css-prefix}-search:before {
+	content: "#{$icon-css-prefix-search}";
+}
+.#{$icon-css-prefix}-home2:before {
+	content: "#{$icon-css-prefix-home2}";
+}
+.#{$icon-css-prefix}-1427823539_f0ac:before {
+	content: "#{$icon-css-prefix-1427823539_f0ac}";
+}
+

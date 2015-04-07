@@ -1,0 +1,152 @@
+﻿
+/*doc
+---
+title: Tables
+name: table
+category: Common - Tables
+---
+
+```html_example
+<table>
+	<thead>
+		<tr>
+			<th>Lorem ipsum</th>
+			<th>Lorem ipsum</th>
+			<th class="table-td--right">Lorem ipsum</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Lorem ipsum</td>
+		<td>Lorem ipsum</td>
+		<td class="table-td--right">Lorem ipsum</td>
+	</tr>
+	<tr>
+		<td>Lorem ipsum</td>
+		<td>Lorem ipsum</td>
+		<td class="table-td--right">Lorem ipsum</td>
+	</tr>
+	</tbody>
+</table>
+```
+
+# Tabell med platta
+
+Make sure you use the `<caption>` element for a heading. You can also use the modifier `table-td--right` to align cell content.
+
+```html_example
+<table class="table--contained">
+	<caption>Lorem ipsum dolor</caption>
+	<thead>
+		<tr>
+			<th>Lorem ipsum</th>
+			<th>Lorem ipsum</th>
+			<th class="table-td--right">Lorem ipsum</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Lorem ipsum</td>
+		<td>Lorem ipsum</td>
+		<td class="table-td--right">Lorem ipsum</td>
+	</tr>
+	<tr>
+		<td>Lorem ipsum</td>
+		<td>Lorem ipsum</td>
+		<td class="table-td--right">Lorem ipsum</td>
+	</tr>
+	</tbody>
+</table>
+```
+*/
+
+.table-container {
+	width: 100%;
+	overflow-y: auto;
+	_overflow: auto;
+	margin: 0 0 1em;
+}
+table {
+	width:100%;
+	margin:em(24px) 0 em(32px);
+	border-bottom:1px solid $default-border-color;
+    overflow:auto;
+}
+p + table {
+	margin-top:em(30px)
+}
+h2 + table {
+	margin-top:em(24px);
+}
+tr:nth-child(odd) td {
+	background:#eeeeee;
+}
+th,
+td {
+	font-size:em(15px);
+	padding:em(19px,15px) em(10px,15px);
+}
+th {
+	font-weight:700;
+	text-align:left;
+	border-bottom:1px solid $default-border-color;
+	padding-bottom:em(14px,15px);
+	padding-top:em(2px);
+}
+.table-td--right {
+	text-align:right;
+}
+
+.table--contained {
+	position:relative;
+	border:1px solid $default-border-color;
+	background:#f9f9f9;
+	margin-top:em(35px);
+	th,
+	td {
+		padding:em(16px,15px) em(16px,15px);
+		border-bottom:none;
+	}
+	tr:nth-child(odd) td {
+		background:#fff;
+	}
+	tr:first-child th {
+		padding-top:5em;
+	}
+	caption {
+		@include font-size(20px);
+		font-weight:700;
+		margin:em(30px,20px) 0 em(19px,20px);
+		@extend .container-heading;
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		text-align:left;
+		padding-bottom:em(16px,20px);
+		border-bottom:1px solid $default-border-color;
+	}
+}
+
+.table--nozebra {
+	tr:nth-child(odd) td {
+		background:none;
+	}
+	tr {
+		border-bottom:1px solid $default-border-color;
+	}
+	td:first-child,
+	th:first-child { padding-left:0; }
+	td {
+		line-height:1.3;
+		padding:em(15px,15px) em(10px,15px) em(17px,15px);
+	}
+}
+
+.table--baseline {
+	td { vertical-align:bottom; }
+}
+
+.container-body table {
+	margin-top:5px;
+}

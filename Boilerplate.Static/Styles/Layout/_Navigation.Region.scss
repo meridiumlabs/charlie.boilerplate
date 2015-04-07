@@ -1,0 +1,66 @@
+﻿.nav-region {
+	position: absolute;
+	
+	right: 266px;
+	top: -77px;
+	
+	width:em(218px);
+	.drop-button {
+		border: 1px solid #d2d2d2;
+		border-radius: 4px;
+		text-align:left;
+		padding-top: 13px; 
+		box-sizing:border-box;
+		height:42px;
+		.icon {
+			line-height: 37px;
+		}
+	}
+	.drop-panel {
+		top:47px;
+		border-color:#d2d2d2;
+	}
+}
+
+.no-js .nav-region {
+	.drop-panel { display:none; }
+}
+
+
+/* Medium size and narrow screen (tablets etc) */
+@media only screen and (max-width: $break-medium) {
+	//Select region dropdown disposition
+	.nav-region {
+		position:static;
+		width:auto;
+		background:#333;
+		padding:em(15px) 0 em(16px);
+		.drop {
+			
+			width:em(225px);
+			margin:0 auto;
+		}
+		.drop-button {
+			border-radius:2px;
+			text-align:center;
+			height:37px;
+			padding-top: 11px; 
+			border:0;
+			.icon {
+				line-height: 34px;
+			}
+		}
+		.drop-panel {
+			top:43px; 
+			right:0;
+			border:0;
+			box-shadow:0 0 5px rgba(0,0,0,0.3);
+			left:0;
+			border-radius:2px;
+		}
+	}
+	.nav-region--empty {
+		padding:0;
+		height:10px;
+	}
+}
