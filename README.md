@@ -1,1 +1,3 @@
-# charlie.boilerplate
+# Boilerplate
+
+Some gulp crap to fire up a KSS styleguide. Work in progress...
